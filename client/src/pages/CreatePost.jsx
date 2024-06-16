@@ -51,7 +51,7 @@ const CreatePost = () => {
           // console.log(data)
           //img upload
           try{
-            const imgUpload=await axios.post(URL+"/api/upload",data)
+            const imgUpload=await axios.post("https://your-backend.vercel.app"+"/api/upload",data)
             // console.log(imgUpload.data)
           }
           catch(err){
@@ -61,7 +61,7 @@ const CreatePost = () => {
         //post upload
         // console.log(post)
         try{
-          const res=await axios.post(URL+"/api/posts/create",post,{withCredentials:true})
+          const res=await axios.post("https://your-backend.vercel.app"+"/api/posts/create",post,{withCredentials:true})
           navigate("/posts/post/"+res.data._id)
           // console.log(res.data)
 
