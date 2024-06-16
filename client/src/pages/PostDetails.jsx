@@ -24,7 +24,7 @@ const PostDetails = () => {
 
   const fetchPost = async () => {
     try {
-      const res = await axios.get("https://your-backend.vercel.app" + "api/posts/" + postId)
+      const res = await axios.get("https://blogg-appi.vercel.app/api/posts/" + postId)
       // console.log(res.data)
       setPost(res.data)
     }
@@ -36,7 +36,7 @@ const PostDetails = () => {
   const handleDeletePost = async () => {
 
     try {
-      const res = await axios.delete("https://your-backend.vercel.app" + "api/posts/" + postId, { withCredentials: true })
+      const res = await axios.delete("https://your-backend.vercel.app/api/posts/" + postId, { withCredentials: true })
       console.log(res.data)
       navigate("/")
 
@@ -55,7 +55,7 @@ const PostDetails = () => {
   const fetchPostComments = async () => {
     setLoader(true)
     try {
-      const res = await axios.get("https://your-backend.vercel.app" + "api/comments/post/" + postId)
+      const res = await axios.get("https://your-backend.vercel.app/api/comments/post/" + postId)
       setComments(res.data)
       setLoader(false)
 
@@ -75,7 +75,7 @@ const PostDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://blogg-backend-lilac.vercel.app/api/comments/create",
+        "https://blogg-appi.vercel.app/api/comments/create",
         {
           comment: comment,
           author: user.username,
