@@ -13,7 +13,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post("https://blogg-backend-lilac.vercel.app/api/auth/register", { username, email, password });
+      const res = await axios.post("https://blogg-appi.vercel.app/api/auth/register", { username, email, password });
       setUsername("");
       setEmail("");
       setPassword("");
