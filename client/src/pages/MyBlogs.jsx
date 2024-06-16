@@ -21,7 +21,7 @@ const MyBlogs = () => {
   const fetchPosts=async()=>{
     setLoader(true)
     try{
-      const res=await axios.get(URL+"https://blogg-backend-chi.vercel.app/posts/user/"+user._id)
+      const res=await axios.get("https://your-backend.vercel.app"+"posts/user/"+user._id)
       // console.log(res.data)
       setPosts(res.data)
       if(res.data.length===0){
