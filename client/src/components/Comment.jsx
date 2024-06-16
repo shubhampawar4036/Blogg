@@ -9,7 +9,7 @@ const Comment = ({ c, post }) => {
   const { user } = useContext(UserContext);
   const deleteComment = async (id) => {
     try {
-      await axios.delete(URL + "/api/comments/" + id, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/comments/${id}`, {
         withCredentials: true,
       });
       window.location.reload(true);
