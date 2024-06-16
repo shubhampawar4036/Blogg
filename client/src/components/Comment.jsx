@@ -5,11 +5,13 @@ import { URL } from "../url";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
+const backendUrl = "https://your-backend.vercel.app";
+
 const Comment = ({ c, post }) => {
   const { user } = useContext(UserContext);
   const deleteComment = async (id) => {
-    try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/comments/${id}`, {
+   try {
+      await axios.delete(`${backendUrl}/comments/${id}`, {
         withCredentials: true,
       });
       window.location.reload(true);
