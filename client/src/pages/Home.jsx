@@ -18,7 +18,7 @@ const Home = () => {
   const fetchPosts = async () => {
     setLoader(true);
     try {
-      const res = await axios.get(URL + "https://blogg-backend-chi.vercel.app/posts/" + search);
+      const res = await axios.get("https://your-backend.vercel.app" + "api/posts/" + search);
       setPosts(res.data);
       setNoResults(res.data.length === 0);
     } catch (err) {
